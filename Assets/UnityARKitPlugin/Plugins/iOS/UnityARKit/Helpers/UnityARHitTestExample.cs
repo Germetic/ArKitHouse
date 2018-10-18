@@ -38,8 +38,9 @@ namespace UnityEngine.XR.iOS
 					m_HitTransform.position = hit.point;
 					Debug.Log (string.Format ("x:{0:0.######} y:{1:0.######} z:{2:0.######}", m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
 
-					//and the rotation from the transform of the plane collider
-					m_HitTransform.rotation = hit.transform.rotation;
+                    //and the rotation from the transform of the plane collider
+                    //m_HitTransform.rotation = hit.transform.rotation;
+                    m_HitTransform.LookAt(Camera.main.transform,Vector3.up);
 				}
 			}
 			#else
